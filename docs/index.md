@@ -1,15 +1,16 @@
 
-## Hi there.. I am Bharat 👋 from India
+## Hey there ... I am Bharat 👋
 
-- 🔭 I'm currently working on GoLang, Docker and Kubernetes
+![GitHub followers](https://img.shields.io/github/followers/bindian0509?style=social) ![GitHub User's stars](https://img.shields.io/github/stars/bindian0509?style=social)
+
+- 🔭 I'm currently working as Manager of Engineering with GoLang, Docker and Kubernetes
 - 🧓 I'm a seasoned programmer in Java, Spring and MongoDB 
-- 🌱 I'm currently learning AWS Cloud along with K8s
+- 🌱 I'm currently learning AWS Cloud along with K8s and other tech.
 - 👯 I'm looking to collaborate on system designing and writing code for microservices. 
 - 🤔 I'm looking for help with Kubernetes on cloud platforms, and gaining AWS proficiency.  
-- 💬 Ask me about Java, SQL or NoSQL database, System designing problems. 
-- 📫 How to reach me: bharatv [at] outlook.in
+- 💬 Ask me about Java, SQL or NoSQL (MongoDB) database, System designing problems. 
+- 📫 How to reach me: bharatv [at] outlook.in or on twitter [@bharat](https://twitter.com/bindian0509)
 - 😄 Pronouns: He/Him/His
-
 
 
 <h2 align="center"><u><b>Knowledge Base</b></u></h2>
@@ -108,8 +109,6 @@
     <a href="https://bharatv90s.medium.com/" target="_blank">
       <img src="https://img.shields.io/badge/medium-000000.svg?style=for-the-badge&logo=medium&logoColor=white" alt="example"/>
     </a>
-  </div>
-  <div>
     <a  href="https://www.linkedin.com/in/bharatverma/" target="_blank">
       <img src="https://img.shields.io/badge/Linked%20In-0A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin"/>
     </a>
@@ -158,8 +157,7 @@
 </a>
 </div>
 
-Credit: [bindian0509](https://github.com/bindian0509)
-</br>
-<img src="https://views.whatilearened.today/views/github/bindian0509/bindian0509.svg?cache=remove"/>
 
-<br><br>
+## Credit: [BHARAT V](https://linktr.ee/bharatv)
+
+<img src="https://views.whatilearened.today/views/github/bindian0509/bindian0509.svg?cache=remove"/>
