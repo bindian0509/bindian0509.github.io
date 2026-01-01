@@ -113,7 +113,7 @@ export default function Experience() {
 
             {experiences.map((exp, index) => {
               const isLeft = index % 2 === 0;
-              
+
               return (
                 <div key={index} className="relative mb-12 md:mb-16">
                   {/* Timeline Dot */}
@@ -127,7 +127,7 @@ export default function Experience() {
                         <ExperienceCard exp={exp} align="right" />
                       )}
                     </div>
-                    
+
                     {/* Right side */}
                     <div className={!isLeft ? "pl-8" : ""}>
                       {!isLeft && (
