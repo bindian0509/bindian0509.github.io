@@ -1,0 +1,170 @@
+const experiences = [
+  {
+    title: "Senior Engineering Manager",
+    subtitle: "Cards Recurring & E-Mandate, Cards Growth",
+    company: "Razorpay",
+    location: "Bengaluru",
+    period: "Mar 2025 – Present",
+    type: "current",
+    highlights: [
+      "Leading 21 engineers across 3 pods, influencing 33 engineers in payments org",
+      "Owning systems processing 15K TPS and ₹600-900 Cr daily card volume",
+      "Reduced transaction latency from 10 seconds to 2 seconds post re-architecture",
+      "Delivered Cred Pay and Apple Pay integrations as primary OKRs",
+      "Achieved 99.9% effective uptime for card payment flows",
+      "Reduced logging costs from 9p to 3p per transaction",
+    ],
+  },
+  {
+    title: "Director, Software Engineering",
+    subtitle: "India Engineering Pods",
+    company: "Guidepoint Global",
+    location: "New York (Remote Pune)",
+    period: "Jun 2023 – Feb 2025",
+    highlights: [
+      "Led CRM modernization, advisor platforms, and client-facing portals",
+      "Delivered PHP 8 migration of entire ecosystem in 2 months for SOC2 compliance",
+      "Decomposed monolithic systems into microservices with Databricks ETL",
+      "Designed federated micro-frontend architecture for AI Co-pilot platform",
+    ],
+  },
+  {
+    title: "Engineering Manager",
+    subtitle: "Cloud Data & ACN Upgrades",
+    company: "Acquia",
+    location: "Boston (Remote India)",
+    period: "Feb 2021 – Jun 2023",
+    highlights: [
+      "Built high-performing team from freshers to senior SDEs and SDETs",
+      "Delivered $660K annual COGS savings through cloud migration",
+      "Championed Kubernetes, Terraform, CI/CD automation across platforms",
+      "Accelerated enterprise customer onboarding and adoption",
+    ],
+  },
+  {
+    title: "Tech Lead & Engineering Manager",
+    subtitle: "Travel & Financial Services",
+    company: "MobiKwik",
+    location: "Gurgaon",
+    period: "Nov 2016 – Feb 2021",
+    highlights: [
+      "Architected Hotels, Bus Tickets, Cabs, Bike Rentals, Insurance products",
+      "Built teams from 0 to 12 engineers; hired 40+ engineers since 2016",
+      "Led transformation to wallet-as-payment-gateway (RBI PPI compliance)",
+      "Improved GMV from ₹181 Cr/month to ₹210 Cr/month via Bug-a-thon",
+      "Achieved API latency under 200ms for recharge payments",
+    ],
+  },
+  {
+    title: "Staff Software Engineer",
+    subtitle: "Technical Lead Manager — Catalogue",
+    company: "ShopClues",
+    location: "Gurgaon",
+    period: "Sep 2015 – Nov 2016",
+    highlights: [
+      "Led 6 engineers owning catalogue, moderation, and inventory systems",
+      "Increased bulk ingestion from 30K to 100K products/day",
+      "Reduced banned-product enforcement SLA from 5 days to 24 hours",
+    ],
+  },
+  {
+    title: "Senior → Lead Engineer",
+    subtitle: "Platform Engineering",
+    company: "InfoEdge (Naukri.com)",
+    location: "Noida",
+    period: "Nov 2011 – May 2015",
+    highlights: [
+      "Built Naukri Background Check and Priority Applicant platforms",
+      "Migrated from Symfony 1.x to 2.x across the platform",
+      "Optimized email/SMS pipelines: SLA improved 3PM → 11AM for 1M+ users",
+      "Introduced Git and Agile practices across engineering teams",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    subtitle: "PreTUPS™ Platform",
+    company: "Comviva Technologies",
+    location: "Gurgaon",
+    period: "Dec 2009 – Mar 2011",
+    highlights: [
+      "Sole developer for prepaid top-up system across 50+ global telecom clients",
+      "SPOC for Vodafone East, West, and North regions",
+    ],
+  },
+];
+
+export default function Experience() {
+  return (
+    <section id="experience" className="py-20 bg-[#161b22]/50">
+      <div className="max-w-4xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <p className="text-[#58a6ff] font-mono text-sm mb-2">02. Experience</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#f0f6fc]">
+            Where I&apos;ve Worked
+          </h2>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#58a6ff] via-[#a371f7] to-[#3fb950] transform md:-translate-x-1/2" />
+
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Timeline Dot */}
+              <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-[#58a6ff] border-4 border-[#0d1117] transform -translate-x-1/2 z-10" />
+
+              {/* Content */}
+              <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"} pl-8 md:pl-0`}>
+                <div
+                  className={`bg-[#21262d] border border-[#30363d] rounded-lg p-6 card-hover ${
+                    exp.type === "current" ? "border-[#58a6ff]" : ""
+                  }`}
+                >
+                  {exp.type === "current" && (
+                    <span className="inline-flex items-center gap-1 px-2 py-1 bg-[#58a6ff]/20 text-[#58a6ff] text-xs rounded-full mb-3">
+                      <span className="w-1.5 h-1.5 bg-[#58a6ff] rounded-full animate-pulse" />
+                      Current Role
+                    </span>
+                  )}
+
+                  <h3 className="text-xl font-bold text-[#f0f6fc] mb-1">
+                    {exp.title}
+                  </h3>
+                  <p className="text-[#a371f7] text-sm mb-2">{exp.subtitle}</p>
+
+                  <div className="flex flex-wrap items-center gap-2 text-sm text-[#8b949e] mb-4">
+                    <span className="font-medium text-[#58a6ff]">{exp.company}</span>
+                    <span>•</span>
+                    <span>{exp.location}</span>
+                    <span>•</span>
+                    <span>{exp.period}</span>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {exp.highlights.map((highlight, hIndex) => (
+                      <li key={hIndex} className="flex items-start gap-2 text-[#8b949e] text-sm">
+                        <span className="text-[#3fb950] mt-1">▹</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Spacer for alternating layout */}
+              <div className="hidden md:block md:w-1/2" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
