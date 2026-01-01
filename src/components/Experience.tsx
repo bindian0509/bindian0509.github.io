@@ -96,80 +96,95 @@ const experiences = [
 export default function Experience() {
   return (
     <section id="experience" className="py-24 md:py-32 bg-[#161b22]/50">
-      <div className="container mx-auto px-6" style={{ maxWidth: '900px' }}>
-        {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <p className="text-[#58a6ff] font-mono text-sm md:text-base mb-3 tracking-wider">02. Experience</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0f6fc]">
-            Where I&apos;ve Worked
-          </h2>
-        </div>
+      <div className="w-full px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16 md:mb-20">
+            <p className="text-[#58a6ff] font-mono text-sm md:text-base mb-3 tracking-wider">02. Experience</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0f6fc]">
+              Where I&apos;ve Worked
+            </h2>
+          </div>
 
-        {/* Timeline - Centered Single Column */}
-        <div className="relative">
-          {/* Timeline Line - Centered */}
-          <div
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#58a6ff] via-[#a371f7] to-[#3fb950]"
-            style={{ transform: 'translateX(-50%)' }}
-          />
+          {/* Timeline - Alternating Layout */}
+          <div className="relative">
+            {/* Timeline Line - Center on desktop, left on mobile */}
+            <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#58a6ff] via-[#a371f7] to-[#3fb950]" />
 
-          <div className="space-y-12 md:space-y-16">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative">
-                {/* Timeline Dot */}
-                <div
-                  className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-[#58a6ff] border-4 border-[#0d1117] z-10"
-                  style={{ transform: 'translate(-50%, 0)', top: '2rem' }}
-                />
+            {experiences.map((exp, index) => {
+              const isLeft = index % 2 === 0;
+              
+              return (
+                <div key={index} className="relative mb-12 md:mb-16">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-[#58a6ff] border-4 border-[#0d1117] -translate-x-1/2 z-10 top-8" />
 
-                {/* Content Card - Alternating on desktop */}
-                <div
-                  className={`ml-14 md:ml-0 md:w-[calc(50%-2rem)] ${
-                    index % 2 === 0
-                      ? 'md:mr-auto md:pr-0'
-                      : 'md:ml-auto md:pl-0'
-                  }`}
-                >
-                  <div
-                    className={`bg-[#21262d] border border-[#30363d] rounded-xl p-6 md:p-8 card-hover ${
-                      exp.type === "current" ? "border-[#58a6ff] shadow-lg shadow-[#58a6ff]/10" : ""
-                    }`}
-                  >
-                    {exp.type === "current" && (
-                      <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#58a6ff]/20 text-[#58a6ff] text-xs font-semibold rounded-full mb-4">
-                        <span className="w-2 h-2 bg-[#58a6ff] rounded-full animate-pulse" />
-                        Current Role
-                      </span>
-                    )}
-
-                    <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] mb-2">
-                      {exp.title}
-                    </h3>
-                    <p className="text-[#a371f7] text-sm md:text-base font-medium mb-3">{exp.subtitle}</p>
-
-                    <div className="flex flex-wrap items-center gap-2 text-sm text-[#8b949e] mb-5">
-                      <span className="font-semibold text-[#58a6ff]">{exp.company}</span>
-                      <span>•</span>
-                      <span>{exp.location}</span>
-                      <span>•</span>
-                      <span>{exp.period}</span>
+                  {/* Desktop: Alternating layout */}
+                  <div className="hidden md:grid md:grid-cols-2 md:gap-12">
+                    {/* Left side */}
+                    <div className={isLeft ? "pr-8" : ""}>
+                      {isLeft && (
+                        <ExperienceCard exp={exp} align="right" />
+                      )}
                     </div>
+                    
+                    {/* Right side */}
+                    <div className={!isLeft ? "pl-8" : ""}>
+                      {!isLeft && (
+                        <ExperienceCard exp={exp} align="left" />
+                      )}
+                    </div>
+                  </div>
 
-                    <ul className="space-y-3">
-                      {exp.highlights.map((highlight, hIndex) => (
-                        <li key={hIndex} className="flex items-start gap-3 text-[#8b949e] text-sm md:text-base">
-                          <span className="text-[#3fb950] mt-1.5 flex-shrink-0">▹</span>
-                          <span className="leading-relaxed">{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Mobile: Single column */}
+                  <div className="md:hidden ml-14">
+                    <ExperienceCard exp={exp} align="left" />
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ExperienceCard({ exp, align }: { exp: typeof experiences[0]; align: "left" | "right" }) {
+  return (
+    <div
+      className={`bg-[#21262d] border border-[#30363d] rounded-xl p-6 md:p-8 card-hover ${
+        exp.type === "current" ? "border-[#58a6ff] shadow-lg shadow-[#58a6ff]/10" : ""
+      } ${align === "right" ? "text-right" : "text-left"}`}
+    >
+      {exp.type === "current" && (
+        <span className={`inline-flex items-center gap-2 px-3 py-1.5 bg-[#58a6ff]/20 text-[#58a6ff] text-xs font-semibold rounded-full mb-4 ${align === "right" ? "flex-row-reverse" : ""}`}>
+          <span className="w-2 h-2 bg-[#58a6ff] rounded-full animate-pulse" />
+          Current Role
+        </span>
+      )}
+
+      <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] mb-2">
+        {exp.title}
+      </h3>
+      <p className="text-[#a371f7] text-sm md:text-base font-medium mb-3">{exp.subtitle}</p>
+
+      <div className={`flex flex-wrap items-center gap-2 text-sm text-[#8b949e] mb-5 ${align === "right" ? "justify-end" : "justify-start"}`}>
+        <span className="font-semibold text-[#58a6ff]">{exp.company}</span>
+        <span>•</span>
+        <span>{exp.location}</span>
+        <span>•</span>
+        <span>{exp.period}</span>
+      </div>
+
+      <ul className="space-y-3">
+        {exp.highlights.map((highlight, hIndex) => (
+          <li key={hIndex} className={`flex items-start gap-3 text-[#8b949e] text-sm md:text-base ${align === "right" ? "flex-row-reverse text-right" : ""}`}>
+            <span className="text-[#3fb950] mt-1.5 flex-shrink-0">▹</span>
+            <span className="leading-relaxed">{highlight}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
