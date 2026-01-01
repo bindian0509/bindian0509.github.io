@@ -108,7 +108,7 @@ export default function Experience() {
         {/* Timeline - Centered Single Column */}
         <div className="relative">
           {/* Timeline Line - Centered */}
-          <div 
+          <div
             className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#58a6ff] via-[#a371f7] to-[#3fb950]"
             style={{ transform: 'translateX(-50%)' }}
           />
@@ -117,16 +117,16 @@ export default function Experience() {
             {experiences.map((exp, index) => (
               <div key={index} className="relative">
                 {/* Timeline Dot */}
-                <div 
+                <div
                   className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-[#58a6ff] border-4 border-[#0d1117] z-10"
                   style={{ transform: 'translate(-50%, 0)', top: '2rem' }}
                 />
 
                 {/* Content Card - Alternating on desktop */}
-                <div 
+                <div
                   className={`ml-14 md:ml-0 md:w-[calc(50%-2rem)] ${
-                    index % 2 === 0 
-                      ? 'md:mr-auto md:pr-0' 
+                    index % 2 === 0
+                      ? 'md:mr-auto md:pr-0'
                       : 'md:ml-auto md:pl-0'
                   }`}
                 >
