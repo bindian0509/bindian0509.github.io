@@ -63,10 +63,10 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-16 md:py-20">
       <div className="w-full max-w-4xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <p className="text-[#58a6ff] font-mono text-sm md:text-base mb-3 tracking-wider">05. Contact</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0f6fc] mb-6">
             Let&apos;s Connect
@@ -114,7 +114,7 @@ export default function Contact() {
         </div>
 
         {/* Ask Me About */}
-        <div className="mt-20 bg-[#161b22] border border-[#30363d] rounded-2xl p-8 md:p-10">
+        <div className="mt-12 bg-[#161b22] border border-[#30363d] rounded-2xl p-8 md:p-10">
           <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] mb-8 text-center">
             💬 Ask Me About
           </h3>
