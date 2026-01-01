@@ -27,15 +27,15 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0d1117]/95 backdrop-blur-md border-b border-[#30363d]"
+          ? "bg-[#0d1117]/95 backdrop-blur-md border-b border-[#30363d] shadow-lg"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="w-full max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link
             href="#"
-            className="text-xl font-bold gradient-text hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity"
           >
             BV
           </Link>
@@ -55,7 +55,7 @@ export default function Navbar() {
               href="https://linkedin.com/in/bharatverma"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-[#1f6feb] hover:bg-[#58a6ff] text-white rounded-lg text-sm font-medium transition-colors"
+              className="px-5 py-2.5 bg-[#1f6feb] hover:bg-[#58a6ff] text-white rounded-lg text-sm font-semibold transition-colors"
             >
               Let&apos;s Connect
             </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[#8b949e] hover:text-[#f0f6fc]"
+            className="md:hidden text-[#8b949e] hover:text-[#f0f6fc] p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg
@@ -99,12 +99,20 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-[#8b949e] hover:text-[#f0f6fc] transition-colors text-sm font-medium"
+                  className="text-[#8b949e] hover:text-[#f0f6fc] transition-colors text-base font-medium py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
+              <a
+                href="https://linkedin.com/in/bharatverma"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 bg-[#1f6feb] hover:bg-[#58a6ff] text-white rounded-lg text-sm font-semibold transition-colors text-center mt-2"
+              >
+                Let&apos;s Connect
+              </a>
             </div>
           </div>
         )}
@@ -112,4 +120,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
