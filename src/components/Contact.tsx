@@ -72,7 +72,7 @@ export default function Contact() {
             Let&apos;s Connect
           </h2>
           <p className="text-[#8b949e] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Whether you want to discuss engineering leadership, system design, or just want to say hi, 
+            Whether you want to discuss engineering leadership, system design, or just want to say hi,
             my inbox is always open. Feel free to reach out!
           </p>
         </div>

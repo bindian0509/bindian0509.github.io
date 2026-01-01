@@ -24,20 +24,20 @@ export default function About() {
           <div className="space-y-6">
             <p className="text-[#8b949e] text-lg md:text-xl leading-relaxed">
               I&apos;m a <span className="text-[#f0f6fc] font-semibold">Senior Engineering Manager</span> at{" "}
-              <span className="text-[#58a6ff] font-semibold">Razorpay</span>, leading the Cards Recurring & E-Mandate 
-              and Cards Growth teams. With <span className="text-[#f0f6fc] font-semibold">15+ years</span> of 
+              <span className="text-[#58a6ff] font-semibold">Razorpay</span>, leading the Cards Recurring & E-Mandate
+              and Cards Growth teams. With <span className="text-[#f0f6fc] font-semibold">15+ years</span> of
               experience, I specialize in building high-scale payment platforms.
             </p>
-            
+
             <p className="text-[#8b949e] text-lg md:text-xl leading-relaxed">
-              Currently, I lead <span className="text-[#f0f6fc] font-semibold">21 engineers across 3 pods</span>, 
-              owning systems that process <span className="text-[#3fb950] font-semibold">15K TPS</span> and handle 
+              Currently, I lead <span className="text-[#f0f6fc] font-semibold">21 engineers across 3 pods</span>,
+              owning systems that process <span className="text-[#3fb950] font-semibold">15K TPS</span> and handle
               <span className="text-[#d29922] font-semibold"> ₹600-900 Cr</span> in daily card transaction volume.
             </p>
 
             <p className="text-[#8b949e] text-lg md:text-xl leading-relaxed">
-              My journey spans from being a sole developer at Comviva to leading engineering organizations 
-              at MobiKwik, Acquia, Guidepoint Global, and now Razorpay. I&apos;ve built teams from 0 to 12, 
+              My journey spans from being a sole developer at Comviva to leading engineering organizations
+              at MobiKwik, Acquia, Guidepoint Global, and now Razorpay. I&apos;ve built teams from 0 to 12,
               hired 40+ engineers, and delivered platforms processing billions.
             </p>
 

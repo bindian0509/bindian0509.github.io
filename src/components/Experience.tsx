@@ -133,12 +133,12 @@ export default function Experience() {
                       Current Role
                     </span>
                   )}
-                  
+
                   <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] mb-2">
                     {exp.title}
                   </h3>
                   <p className="text-[#a371f7] text-sm md:text-base font-medium mb-3">{exp.subtitle}</p>
-                  
+
                   <div className="flex flex-wrap items-center gap-2 text-sm text-[#8b949e] mb-5">
                     <span className="font-semibold text-[#58a6ff]">{exp.company}</span>
                     <span>•</span>

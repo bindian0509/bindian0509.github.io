@@ -7,7 +7,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Bharat Verma. Built with{" "}
             <span className="text-[#db61a2]">♥</span> using Next.js & Tailwind CSS
           </div>
-          
+
           <div className="flex items-center gap-4">
             <a
               href="https://github.com/bindian0509/bindian0509.github.io"
@@ -20,9 +20,9 @@ export default function Footer() {
               </svg>
               View Source
             </a>
-            
+
             <span className="text-[#30363d]">|</span>
-            
+
             <span className="text-[#8b949e] text-sm md:text-base">
               Pune, India 🇮🇳
             </span>

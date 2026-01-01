@@ -82,18 +82,18 @@ export default function Achievements() {
               >
                 {achievement.icon}
               </div>
-              
+
               <div
                 className="text-2xl md:text-3xl font-bold mb-2"
                 style={{ color: achievement.color }}
               >
                 {achievement.metric}
               </div>
-              
+
               <h3 className="text-[#f0f6fc] font-semibold text-base md:text-lg mb-3">
                 {achievement.title}
               </h3>
-              
+
               <p className="text-[#8b949e] text-sm leading-relaxed">
                 {achievement.description}
               </p>
