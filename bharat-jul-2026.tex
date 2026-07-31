@@ -1,0 +1,147 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{tfrupee} % Loads the rupee font map
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+% Maps the literal Unicode character to the tfrupee font command
+\newunicodechar{₹}{\rupee}
+\usepackage[margin=0.8in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}  % Professional serif font (Bitstream Charter)
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% Reduce line spacing
+\linespread{0.92}
+
+% Tighter section spacing
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% Compact list spacing
+\setlist[itemize]{topsep=2pt, partopsep=0pt, parsep=1pt, itemsep=2pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+% allow extra stretch to avoid underfull hbox warnings on long lines
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Bharat Verma}}\\
+Pune, Maharashtra, India \\
++91-9560452567 \quad | \quad \href{mailto:bindian0509@gmail.com}{bindian0509@gmail.com} \\
+\textbf{LinkedIn}: \href{https://linkedin.com/in/bharatverma}{linkedin.com/in/bharatverma}
+\\
+\textbf{Open to}: Engineering leadership roles across India, Singapore, and Dubai/UAE
+\end{center}
+
+\vspace{4pt}
+
+%==================== SUMMARY ====================
+\section*{Professional Summary}
+Senior Engineering Leader / Director of Engineering with 16+ years of experience leading fintech, SaaS, and platform engineering organizations across distributed India-US teams. Manager of managers with ownership of payment platforms processing 5--15K TPS and \$60--90M daily transaction volume, leading 20+ engineers directly and influencing 30+ across cross-functional payment domains. Known for modernizing monoliths into cloud-native Go/Java microservices, improving reliability and observability, reducing platform cost, and translating business, regulatory, and product priorities into execution roadmaps. Recent focus includes AI-assisted SDLC, SRE maturity, FinOps, platform modernization, and GCC/site scaling.
+
+\vspace{2pt}
+
+%==================== SKILLS ====================
+\section*{Leadership \& Technical Strengths}
+\textbf{Leadership:} Organization design, talent hiring, coaching \& mentoring, cost optimization, OKR planning, roadmap execution, stakeholder management, SRE and Incident Management, AI-Assisted SDLC\\
+\textbf{Domain:} Payments, fintech platforms, recurring/card payments, compliance-heavy systems, SaaS platforms, GCC scaling, Cloud Native Platforms\\
+\textbf{Architecture:} Distributed systems, Microservices, Event-driven platforms, CQRS, Transactional Outbox, Circuit Breaker, Observability, Platform modernization (Strangler Fig Pattern)\\
+\textbf{Languages \& Frameworks:} Java, Go, PHP, Python, Shell Scripting, Spring Boot, Symfony/API-Platform, Echo (Go), gRPC\\
+\textbf{Cloud \& DevOps:} AWS, Azure AKS, Kubernetes, Docker, Terraform, Ansible, Jenkins, GitHub Actions, Azure DevOps, Argo CD\\
+\textbf{Data \& Messaging:} MySQL, Postgres, TiDB, MongoDB, Cassandra, Redis, Kafka, RabbitMQ, Amazon SQS, Apache Pinot, Elasticsearch, Databricks\\
+\textbf{Observability \& FinOps:} CloudZero, Datadog, ELK Stack, OpenTelemetry, Grafana, Prometheus, PagerDuty, Micrometer, Zipkin\\
+\textbf{AI-Assisted Engineering:} Claude Code, Cursor IDE, ChatGPT, NotebookLM, n8n.io workflows, AI-assisted code review, refactoring, documentation and test generation
+
+%==================== EXPERIENCE ====================
+\section*{Professional Experience}
+
+\textbf{Senior Engineering Manager, Razorpay} (Bengaluru, Karnataka, India) | Mar 2025 - Apr 2026 \\
+\begin{itemize}[leftmargin=*]
+    \item Partnered with Product, Business, Risk, Operations and Compliance teams to define and execute roadmap for two payment platforms processing \$60-90M daily volume and up to 15K TPS.
+    \item Led 21 engineers across 3 pods and influenced ~33 engineers across the broader payments organization, including routing, terminal, and cross-border payment domains.
+    \item Drove re-architecture of legacy PHP API monolith into scalable Go microservices for card and recurring payment systems aligned with the SaCRED (Security, Compliance, Reliability, Efficiency, Delivery) framework.
+    \item Identified a business visibility gap where merchant-impacting payment issues were detected with 20-minute delays. Defined and delivered a real-time observability platform using Kafka, Spark Streaming and Apache Pinot, reducing detection latency to under 1 second across 40+ high-value merchants.
+    \item Delivered Cred Pay and Apple Pay integrations as primary OKRs for FY26, impacting merchant adoption and payment success rates.
+    \item Owned org-wide technical debt and FinOps roadmap to reduce average logging cost from ₹0.09 to ₹0.03 per transaction.
+    \item Established engineering standards for incident management, on-call readiness, CI/CD maturity, and production reliability.
+    \item Established AI-assisted SDLC workflows using Claude Code, Cursor, ChatGPT and NotebookLM for documentation, code review, refactoring, and test generation while improving developer productivity and review quality.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Director, Software Engineering, Guidepoint Global} (Pune, Maharashtra, India) | Jun 2023 - Feb 2025 \\
+\begin{itemize}[leftmargin=*]
+    \item Led engineering teams responsible for CRM modernization, advisor discovery, client portals, and AI-assisted experiences while partnering directly with product and business stakeholders in New York.
+    \item Delivered end-to-end PHP 8 migration of the entire ecosystem within 2 months, enabling SOC2 compliance and continuity for enterprise clients including BCG and McKinsey.
+    \item Led decomposition of PHP monolithic systems into microservices and integrated Databricks ETL pipelines for advisor discovery platforms.
+    \item Designed and delivered federated micro-frontend architecture unifying Advisor Search, Insights 2.0, and AI Co-pilot; integrated LLM-based features for advisor matching and insights generation.
+    \item Owned organization design, execution planning, and stakeholder management with the CTO to transform the Pune office into a Global Capacity Center (GCC).
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Manager, Engineering, Acquia} (Pune, Maharashtra, India) | Feb 2021 - Jun 2023 \\
+\begin{itemize}[leftmargin=*]
+    \item Built and led a high-performing engineering team for NGC Upgrades and Data platforms across IST and EST (Boston) time zones, covering Junior to Principal engineers across full-time and contractor roles.
+    \item Delivered \$660K annual COGS savings by migrating customers from Acquia Cloud Classic to Cloud Next, along with provisioning of the multi-tenant database model Amazon Aurora MySQL.
+    \item Owned delivery of ACN (Acquia Cloud Next) roadmap features accelerating enterprise customer onboarding and adoption.
+    \item Championed DevOps, Kubernetes, Terraform, CI/CD automation, and SRE (Site Reliability Engineering) improvements across ACN and DAM (Digital Asset Management) platforms.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Java Technical Lead to Engineering Manager, MobiKwik} (Gurgaon, Haryana, India) | Nov 2016 - Feb 2021 \\
+\begin{itemize}[leftmargin=*]
+    \item Partnered with business leaders to identify market opportunities and launch Insurance, Lending and Travel businesses from inception to production, defining MVP scope, partner integrations, technical architecture and execution strategy.
+    \item Engineered MobiKwik's insurance cross-sell framework (Stargate), enabling multiple service bundles to be sold in a single transaction.
+    \item Built teams from 0$\to$12 engineers for travel and financial services domains; hired 40+ engineers across experience levels since 2016.
+    \item Led transformation from wallet-only to wallet-as-payment-gateway architecture aligned with RBI PPI regulations.
+    \item Defined and owned SLAs of 99.90\% availability for recharge and bill payments with a fault-tolerant architecture implementing the circuit-breaker pattern.
+    \item Achieved API latency targets under 200ms for recharge payments across wallet and gateway modes like Euronet, BillDesk, and BillAvenue as official BBPOUs.
+    \item Built centralized log aggregation, distributed correlation and tracing on an ELK-based observability stack from scratch, improving incident RCA and system reliability.
+    \item Led tech-debt reduction initiative increasing recharge GMV from ₹181 to ₹210 crores/month by solving top pain points that resulted in direct impact.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Staff Software Engineer, ShopClues} (Gurgaon, Haryana, India) | Sep 2015 - Nov 2016 \\
+\begin{itemize}[leftmargin=*]
+    \item Led a team of 6 engineers owning catalogue ingestion, moderation, and inventory systems.
+    \item Increased bulk product ingestion throughput from 30K to 100K products per day.
+    \item Built REST-based catalogue and inventory services using PHP Phalcon, also created the plan for sharding and replication of the products DB.
+    \item Reduced filtering banned-product enforcement SLA from 5 days to under 24 hours.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Senior Software Engineer to Lead Engineer, InfoEdge (Naukri.com)} (Noida, Uttar Pradesh, India) | Nov 2011 - May 2015 \\
+\begin{itemize}[leftmargin=*]
+    \item Migrated legacy systems from Symfony 1.x to Symfony 2.x.
+    \item Built Naukri.com's Background Check and Priority Applicant platforms from scratch.
+    \item Optimized CRM email/SMS pipelines, reducing daily SLA from 3 PM to 11 AM for over 1M active users.
+    \item Introduced Git, Docker, and Agile practices across engineering teams.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Software Engineer, Comviva Technologies} (Gurgaon, Haryana, India) | Dec 2009 - Mar 2011 \\
+\begin{itemize}[leftmargin=*]
+    \item Dedicated module developer for PreTUPS (TM) 4.5/4.6, a prepaid top-up system deployed across 50+ global telecom clients.
+    \item Selected via campus placement and ranked as the top candidate choice for the dev teams of critical Mobile Business Solutions.
+    \item SPOC for Vodafone East, West, and North regions handling various mission-critical client migrations, upgrades, and setup on-site.
+\end{itemize}
+
+%==================== EDUCATION ====================
+\section*{Education}
+\textbf{Bachelor of Technology, Computer Engineering} \\
+Jamia Millia Islamia, New Delhi (NIRF India Top 25 Engineering Institute List) | Jul 2005 - Jun 2009
+
+\vspace{4pt}
+Last Updated: July 2026 -- Pune, Maharashtra, India
+\end{document}
+
+

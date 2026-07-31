@@ -1,123 +1,102 @@
-const achievements = [
+const outcomes = [
   {
-    icon: "⚡",
-    metric: "10s → 2s",
-    title: "Latency Reduction",
-    description: "Reduced card transaction latency by 80% through re-architecture at Razorpay",
-    color: "#58a6ff",
+    metric: "< 1s",
+    title: "Failure detection on payment flows",
+    context:
+      "Merchant-impacting issues used to surface 20 minutes late. A Kafka → Spark Streaming → Apache Pinot pipeline brought it under a second for 40+ high-value merchants.",
+    where: "Razorpay",
   },
   {
-    icon: "📈",
-    metric: "99.9%",
-    title: "Uptime SLA",
-    description: "Achieved effective uptime for standing-instruction repeat card payment flows",
-    color: "#3fb950",
-  },
-  {
-    icon: "💰",
     metric: "$660K",
-    title: "Cost Savings",
-    description: "Annual COGS savings by migrating customers from Cloud Classic to Cloud Next at Acquia",
-    color: "#d29922",
+    title: "Annual COGS removed",
+    context:
+      "Migrating customers from Cloud Classic to Cloud Next on a multi-tenant Aurora MySQL model, without a customer-visible cutover event.",
+    where: "Acquia",
   },
   {
-    icon: "📦",
-    metric: "3x",
-    title: "Throughput Boost",
-    description: "Increased product ingestion from 30K to 100K products/day at ShopClues",
-    color: "#a371f7",
+    metric: "₹0.09 → ₹0.03",
+    title: "Logging cost per transaction",
+    context:
+      "An org-wide tech-debt and FinOps programme that made observability spend proportional to the value of what was being observed.",
+    where: "Razorpay",
   },
   {
-    icon: "💳",
-    metric: "₹29Cr",
-    title: "GMV Growth",
-    description: "Grew monthly GMV from ₹181Cr to ₹210Cr through Bug-a-thon initiative at MobiKwik",
-    color: "#db61a2",
+    metric: "2 months",
+    title: "Full PHP 8 migration",
+    context:
+      "The entire product ecosystem moved in a single quarter, unblocking SOC 2 compliance and continuity for enterprise clients.",
+    where: "Guidepoint",
   },
   {
-    icon: "⏰",
-    metric: "4hrs",
-    title: "SLA Improvement",
-    description: "Optimized email/SMS pipelines from 3PM to 11AM SLA for 1M+ users at Naukri",
-    color: "#58a6ff",
+    metric: "99.90%",
+    title: "Availability on recharge and bill payments",
+    context:
+      "Circuit-breaker isolation across Euronet, BillDesk and BillAvenue as official BBPOUs, holding sub-200ms API latency.",
+    where: "MobiKwik",
   },
   {
-    icon: "👥",
+    metric: "₹181 → ₹210 Cr",
+    title: "Monthly recharge GMV",
+    context:
+      "Earned by fixing the top operational pain points rather than adding features — a tech-debt initiative with a revenue line attached.",
+    where: "MobiKwik",
+  },
+  {
+    metric: "30K → 100K",
+    title: "Products ingested per day",
+    context:
+      "Catalogue ingestion rebuilt on REST services, with banned-product enforcement cut from five days to under 24 hours.",
+    where: "ShopClues",
+  },
+  {
     metric: "40+",
-    title: "Engineers Hired",
-    description: "Built and scaled engineering teams from scratch across multiple organizations",
-    color: "#3fb950",
+    title: "Engineers hired since 2016",
+    context:
+      "Across juniors to principals, in-house and contract, in India and the US — including two teams taken from zero to twelve.",
+    where: "Across roles",
   },
-  {
-    icon: "🔄",
-    metric: "9p → 3p",
-    title: "Cost Optimization",
-    description: "Reduced logging costs per transaction by 66% for card payment systems",
-    color: "#d29922",
-  },
+];
+
+const delivered = [
+  "Cred Pay",
+  "Apple Pay",
+  "Google Pay",
+  "RBI PPI compliance",
+  "SOC 2 readiness",
+  "PCI-DSS environments",
 ];
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-16 md:py-20 bg-[#161b22]/50">
-      <div className="w-full max-w-6xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-10 md:mb-12">
-          <p className="text-[#58a6ff] font-mono text-sm md:text-base mb-3 tracking-wider">04. Achievements</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0f6fc]">
-            Impact & Results
-          </h2>
-        </div>
+    <section id="outcomes" className="border-b border-rule py-16 sm:py-24">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
+        <p className="eyebrow">Outcomes</p>
+        <h2 className="mt-6 text-3xl sm:text-4xl">Numbers I&apos;m accountable for</h2>
+        <p className="mt-5 max-w-2xl text-ink-muted">
+          Every line below had a cost centre, an owner and a date. They are the results I&apos;d bring
+          up in a reference call.
+        </p>
 
-        {/* Achievements Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {achievements.map((achievement, index) => (
-            <div
-              key={index}
-              className="bg-[#21262d] border border-[#30363d] rounded-xl p-6 md:p-8 card-hover text-center group"
-            >
-              <div
-                className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-5 rounded-2xl flex items-center justify-center text-3xl md:text-4xl transition-transform group-hover:scale-110"
-                style={{ backgroundColor: `${achievement.color}15` }}
-              >
-                {achievement.icon}
-              </div>
-
-              <div
-                className="text-2xl md:text-3xl font-bold mb-2"
-                style={{ color: achievement.color }}
-              >
-                {achievement.metric}
-              </div>
-
-              <h3 className="text-[#f0f6fc] font-semibold text-base md:text-lg mb-3">
-                {achievement.title}
-              </h3>
-
-              <p className="text-[#8b949e] text-sm leading-relaxed">
-                {achievement.description}
+        <ul className="mt-12 grid gap-px border border-rule bg-rule sm:grid-cols-2">
+          {outcomes.map((outcome) => (
+            <li key={outcome.title} className="bg-paper p-6 sm:p-7">
+              <p className="font-serif text-3xl text-accent">{outcome.metric}</p>
+              <h3 className="mt-3 text-lg">{outcome.title}</h3>
+              <p className="mt-2 text-[0.95rem] text-ink-muted">{outcome.context}</p>
+              <p className="mt-3 font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink-subtle">
+                {outcome.where}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        {/* Featured Integrations */}
-        <div className="mt-12 text-center">
-          <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] mb-8">
-            Key Integrations Delivered
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {["Cred Pay", "Apple Pay", "Google Pay", "RBI PPI Compliance", "SOC2 Compliance"].map(
-              (integration, index) => (
-                <span
-                  key={index}
-                  className="px-6 py-3 bg-[#21262d] border border-[#30363d] rounded-full text-[#8b949e] hover:text-[#f0f6fc] hover:border-[#58a6ff] transition-all cursor-default font-medium"
-                >
-                  {integration}
-                </span>
-              )
-            )}
-          </div>
+        <div className="mt-10 grid gap-3 sm:grid-cols-[190px_1fr] sm:gap-10">
+          <p className="eyebrow sm:pt-1.5">Also shipped</p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[0.95rem] text-ink-muted">
+            {delivered.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

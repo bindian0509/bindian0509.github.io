@@ -7,7 +7,7 @@ const socialLinks = [
       </svg>
     ),
     href: "https://linkedin.com/in/bharatverma",
-    color: "#0A66C2",
+    label: "in/bharatverma",
   },
   {
     name: "Twitter",
@@ -17,7 +17,7 @@ const socialLinks = [
       </svg>
     ),
     href: "https://twitter.com/iambharatv",
-    color: "#1DA1F2",
+    label: "@iambharatv",
   },
   {
     name: "GitHub",
@@ -27,7 +27,7 @@ const socialLinks = [
       </svg>
     ),
     href: "https://github.com/bindian0509",
-    color: "#f0f6fc",
+    label: "bindian0509",
   },
   {
     name: "Medium",
@@ -37,7 +37,7 @@ const socialLinks = [
       </svg>
     ),
     href: "https://bharatv90s.medium.com",
-    color: "#f0f6fc",
+    label: "bharatv90s",
   },
   {
     name: "Dev.to",
@@ -47,94 +47,100 @@ const socialLinks = [
       </svg>
     ),
     href: "https://dev.to/bindian0509",
-    color: "#f0f6fc",
+    label: "bindian0509",
+  },
+];
+
+const conversations = [
+  {
+    topic: "Platform strategy",
+    detail: "What a platform team should own, expose and refuse to own.",
   },
   {
-    name: "Telegram",
-    icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-      </svg>
-    ),
-    href: "https://t.me/BIRD_PERSON_27",
-    color: "#26A5E4",
+    topic: "Payment systems",
+    detail: "Card, recurring and e-mandate flows, partner failover, reconciliation, PCI-DSS.",
+  },
+  {
+    topic: "Monolith decomposition",
+    detail: "Strangler-fig migrations that finish, rather than leaving two systems to maintain.",
+  },
+  {
+    topic: "Org design and GCC build-out",
+    detail: "Standing up an India centre with real ownership, and running IST–EST delivery.",
+  },
+  {
+    topic: "Reliability and FinOps",
+    detail: "On-call that people can live with, and observability spend that stays proportionate.",
+  },
+  {
+    topic: "Moving into leadership",
+    detail: "Coaching, interview preparation and resume reviews for engineers making the jump.",
   },
 ];
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-20">
-      <div className="w-full max-w-4xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-10 md:mb-12">
-          <p className="text-[#58a6ff] font-mono text-sm md:text-base mb-3 tracking-wider">05. Contact</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0f6fc] mb-6">
-            Let&apos;s Connect
-          </h2>
-          <p className="text-[#8b949e] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Whether you want to discuss engineering leadership, system design, or just want to say hi,
-            my inbox is always open. Feel free to reach out!
-          </p>
-        </div>
+    <section id="contact" className="py-16 sm:py-24">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
+        <p className="eyebrow">Contact</p>
 
-        {/* Email CTA */}
-        <div className="text-center mb-14">
-          <a
-            href="mailto:bharatv@outlook.in?subject=Hello%20from%20your%20portfolio&body=Hi%20Bharat,"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-[#1f6feb] hover:bg-[#58a6ff] text-white rounded-xl font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#1f6feb]/25"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Say Hello
-          </a>
-        </div>
+        <div className="mt-6 grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
+          <div>
+            <h2 className="text-3xl sm:text-4xl">Get in touch</h2>
+            <p className="mt-5 text-ink-muted">
+              I answer email properly — a short note about the problem you&apos;re working on gets a
+              better reply than a connection request. Currently at AssetMark, and always happy to
+              talk platform or payments work, including opportunities across India, Singapore and
+              the UAE.
+            </p>
 
-        {/* Social Links */}
-        <div className="flex flex-wrap justify-center gap-4">
-          {socialLinks.map((link, index) => (
             <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-6 py-3.5 bg-[#21262d] border border-[#30363d] rounded-xl hover:border-[#58a6ff] transition-all card-hover"
+              href="mailto:bharatv@outlook.in"
+              className="mt-8 inline-block font-serif text-2xl text-accent link-rule sm:text-3xl"
             >
-              <span
-                className="transition-colors"
-                style={{ color: link.color }}
-              >
-                {link.icon}
-              </span>
-              <span className="text-[#8b949e] group-hover:text-[#f0f6fc] transition-colors font-medium">
-                {link.name}
-              </span>
+              bharatv@outlook.in
             </a>
-          ))}
-        </div>
 
-        {/* Ask Me About */}
-        <div className="mt-12 bg-[#161b22] border border-[#30363d] rounded-2xl p-8 md:p-10">
-          <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] mb-8 text-center">
-            💬 Ask Me About
-          </h3>
-          <div className="grid md:grid-cols-2 gap-5">
-            {[
-              { topic: "System Design", desc: "Distributed systems, microservices, high-scale architectures" },
-              { topic: "Payment Systems", desc: "Card payments, recurring transactions, PCI compliance" },
-              { topic: "Engineering Leadership", desc: "Team building, hiring, performance management" },
-              { topic: "Tech Stack", desc: "Java, Go, Spring Boot, Kubernetes, AWS, Kafka" },
-              { topic: "DevOps", desc: "CI/CD pipelines, infrastructure as code, observability" },
-              { topic: "Interview Prep", desc: "System design interviews, coding rounds, leadership rounds" },
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <span className="text-[#3fb950] mt-1 flex-shrink-0">▹</span>
-                <div>
-                  <span className="text-[#f0f6fc] font-semibold">{item.topic}</span>
-                  <span className="text-[#8b949e]"> → {item.desc}</span>
-                </div>
+            <dl className="mt-8 space-y-3 text-sm">
+              <div className="flex gap-3">
+                <dt className="eyebrow w-24 shrink-0 pt-0.5">Based in</dt>
+                <dd className="text-ink-muted">Pune, Maharashtra, India</dd>
               </div>
-            ))}
+              <div className="flex gap-3">
+                <dt className="eyebrow w-24 shrink-0 pt-0.5">Languages</dt>
+                <dd className="text-ink-muted">English, Hindi</dd>
+              </div>
+              <div className="flex gap-3">
+                <dt className="eyebrow w-24 shrink-0 pt-0.5">Elsewhere</dt>
+                <dd className="flex flex-wrap gap-x-4 gap-y-2">
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={link.label}
+                      className="flex items-center gap-1.5 text-ink-muted transition-colors hover:text-accent [&_svg]:h-4 [&_svg]:w-4"
+                    >
+                      {link.icon}
+                      <span>{link.name}</span>
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div>
+            <p className="eyebrow">Worth a conversation about</p>
+            <dl className="mt-4 border-t border-rule">
+              {conversations.map((item) => (
+                <div key={item.topic} className="border-b border-rule py-4">
+                  <dt className="text-ink">{item.topic}</dt>
+                  <dd className="mt-1 text-[0.95rem] text-ink-muted">{item.detail}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </div>

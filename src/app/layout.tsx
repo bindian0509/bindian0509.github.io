@@ -1,22 +1,39 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const title = "Bharat Verma — Engineering Leader, Platform & Payments";
+const description =
+  "Engineering leader with 16+ years building platform and payment organisations. Director of Platform Engineering at AssetMark; previously Razorpay, Guidepoint, Acquia and MobiKwik.";
+
 export const metadata: Metadata = {
-  title: "Bharat Verma | Senior Engineering Manager",
-  description: "Senior Engineering Manager at Razorpay with 15+ years of experience in backend engineering, distributed systems, and fintech platforms.",
-  keywords: ["Bharat Verma", "Engineering Manager", "Razorpay", "Backend Engineer", "Distributed Systems", "Fintech"],
+  metadataBase: new URL("https://bindian0509.github.io"),
+  title,
+  description,
+  keywords: [
+    "Bharat Verma",
+    "Platform Engineering",
+    "Director of Engineering",
+    "Payments",
+    "Fintech",
+    "Distributed Systems",
+    "Kubernetes",
+    "Go",
+    "Java",
+  ],
   authors: [{ name: "Bharat Verma" }],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Bharat Verma | Senior Engineering Manager",
-    description: "Senior Engineering Manager at Razorpay with 15+ years of experience",
+    title,
+    description,
     url: "https://bindian0509.github.io",
-    siteName: "Bharat Verma Portfolio",
-    type: "website",
+    siteName: "Bharat Verma",
+    locale: "en_IN",
+    type: "profile",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Bharat Verma | Senior Engineering Manager",
-    description: "Senior Engineering Manager at Razorpay with 15+ years of experience",
+    card: "summary",
+    title,
+    description,
     creator: "@iambharatv",
   },
 };
@@ -27,23 +44,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-        <style>{`
-          body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          }
-          .font-mono, pre, code {
-            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-          }
-        `}</style>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="antialiased">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

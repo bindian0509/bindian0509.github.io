@@ -1,79 +1,67 @@
+const practice = [
+  {
+    title: "Platform engineering",
+    body: "Shared services, API-first contracts and event-driven backbones that several product teams depend on. The platform is a product; developer experience and extensibility count as much as the feature that shipped this quarter.",
+  },
+  {
+    title: "Payments and regulated systems",
+    body: "Card, recurring and e-mandate flows under PCI-DSS and RBI PPI constraints. Idempotency, reconciliation, partner failover and the operational discipline that keeps a payment platform honest at 15K TPS.",
+  },
+  {
+    title: "Cloud-native and FinOps",
+    body: "Kubernetes, Terraform and CI/CD on AWS and Azure, with cost treated as a first-class metric — including $660K of annual COGS removed at Acquia and per-transaction logging cost cut by two-thirds at Razorpay.",
+  },
+  {
+    title: "Real-time data",
+    body: "Kafka, Spark Streaming and Apache Pinot for operational analytics, plus Databricks pipelines for discovery products. Built for people who need to answer a question before the incident bridge fills up.",
+  },
+  {
+    title: "Org design and GCC build-out",
+    body: "Multi-pod organisations of 20–30 engineers, hiring across levels, and turning an offshore office into a Global Capability Center with genuine ownership rather than ticket execution.",
+  },
+  {
+    title: "AI-assisted delivery",
+    body: "Claude Code, Cursor and n8n adopted as team practice rather than a pilot — code review, refactoring, documentation and test generation — alongside LLM features shipped into production.",
+  },
+];
+
 export default function About() {
-  const focusAreas = [
-    { icon: "👥", title: "Team Building", desc: "Hiring & mentoring engineers" },
-    { icon: "🏗️", title: "Architecture", desc: "Microservices & distributed systems" },
-    { icon: "📈", title: "Reliability", desc: "SLI/SLO/SLA & incident management" },
-    { icon: "💰", title: "Fintech", desc: "Payment systems & compliance" },
-    { icon: "☁️", title: "Cloud-Native", desc: "Kubernetes, AWS, Terraform" },
-    { icon: "🚀", title: "Delivery", desc: "CI/CD & DevOps excellence" },
-  ];
-
   return (
-    <section id="about" className="py-16 md:py-20 relative">
-      <div className="w-full max-w-6xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-10 md:mb-12">
-          <p className="text-[#58a6ff] font-mono text-sm md:text-base mb-3 tracking-wider">01. About Me</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0f6fc]">
-            Who I Am
-          </h2>
-        </div>
+    <section id="profile" className="border-b border-rule py-16 sm:py-24">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
+        <p className="eyebrow">Profile</p>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left - Text Content */}
-          <div className="space-y-6">
-            <p className="text-[#8b949e] text-lg md:text-xl leading-relaxed">
-              I&apos;m a <span className="text-[#f0f6fc] font-semibold">Senior Engineering Manager</span> at{" "}
-              <span className="text-[#58a6ff] font-semibold">Razorpay</span>, leading the Cards Recurring & E-Mandate
-              and Cards Growth teams. With <span className="text-[#f0f6fc] font-semibold">15+ years</span> of
-              experience, I specialize in building high-scale payment platforms.
+        <div className="mt-6 grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">
+          <div>
+            <h2 className="text-3xl sm:text-4xl">What I actually do</h2>
+            <p className="mt-5 text-ink-muted">
+              Six areas cover most of my work. The through-line is the same in each: make the
+              expensive decisions early, keep the boring things reliable, and give engineers a
+              system they can reason about.
             </p>
-
-            <p className="text-[#8b949e] text-lg md:text-xl leading-relaxed">
-              Currently, I lead <span className="text-[#f0f6fc] font-semibold">21 engineers across 3 pods</span>,
-              owning systems that process <span className="text-[#3fb950] font-semibold">15K TPS</span> and handle
-              <span className="text-[#d29922] font-semibold"> ₹600-900 Cr</span> in daily card transaction volume.
+            <p className="mt-5 text-ink-muted">
+              I stay close to the code — architecture reviews, design docs, the occasional
+              production trace — because leadership decisions get worse the further you drift from
+              the thing you&apos;re deciding about.
             </p>
-
-            <p className="text-[#8b949e] text-lg md:text-xl leading-relaxed">
-              My journey spans from being a sole developer at Comviva to leading engineering organizations
-              at MobiKwik, Acquia, Guidepoint Global, and now Razorpay. I&apos;ve built teams from 0 to 12,
-              hired 40+ engineers, and delivered platforms processing billions.
-            </p>
-
-            {/* Code Block */}
-            <div className="bg-[#161b22] border border-[#30363d] rounded-xl p-5 font-mono text-sm mt-8">
-              <div className="flex items-center gap-2 text-[#8b949e] mb-4">
-                <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                <span className="ml-3 text-xs">bharat.yaml</span>
-              </div>
-              <pre className="text-[#8b949e] overflow-x-auto text-sm leading-relaxed">
-{`location: Pune, India 🇮🇳
-education: B.Tech, Jamia Millia Islamia
-interests:
-  - System Design
-  - AI/ML (RAG, LLMs, Agents)
-  - Building high-scale platforms
-pronouns: He/Him`}
-              </pre>
-            </div>
           </div>
 
-          {/* Right - Focus Areas */}
-          <div className="grid grid-cols-2 gap-4 md:gap-5">
-            {focusAreas.map((area, index) => (
+          <dl className="border-t border-rule">
+            {practice.map((item, index) => (
               <div
-                key={index}
-                className="bg-[#161b22] border border-[#30363d] rounded-xl p-5 md:p-6 card-hover"
+                key={item.title}
+                className="grid gap-2 border-b border-rule py-6 sm:grid-cols-[auto_1fr] sm:gap-6"
               >
-                <div className="text-3xl md:text-4xl mb-4">{area.icon}</div>
-                <h3 className="text-[#f0f6fc] font-semibold text-base md:text-lg mb-2">{area.title}</h3>
-                <p className="text-[#8b949e] text-sm md:text-base">{area.desc}</p>
+                <dt className="font-mono text-xs text-ink-subtle sm:pt-1">
+                  {String(index + 1).padStart(2, "0")}
+                </dt>
+                <dd>
+                  <h3 className="text-xl">{item.title}</h3>
+                  <p className="mt-2 text-[0.95rem] text-ink-muted">{item.body}</p>
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
     </section>

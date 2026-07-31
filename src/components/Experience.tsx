@@ -1,190 +1,167 @@
-const experiences = [
+type Role = {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  current?: boolean;
+  summary: string;
+  highlights?: string[];
+};
+
+const roles: Role[] = [
   {
-    title: "Senior Engineering Manager",
-    subtitle: "Cards Recurring & E-Mandate, Cards Growth",
+    title: "Director, Platform Engineering",
+    company: "AssetMark",
+    location: "Hyderabad, India — Remote",
+    period: "Jul 2026 — Present",
+    current: true,
+    summary:
+      "Leading platform engineering for a US wealth-management technology firm, with ownership of shared services, developer experience and the engineering standards the product teams build on.",
+  },
+  {
+    title: "Senior Engineering Manager, Card Payments",
     company: "Razorpay",
-    location: "Bengaluru",
-    period: "Mar 2025 – Present",
-    type: "current",
+    location: "Bengaluru, India",
+    period: "Mar 2025 — Apr 2026",
+    summary:
+      "Owned two payment platforms — card recurring and e-mandate, and partner pay programmes — running 5–15K TPS and $60–90M in daily volume.",
     highlights: [
-      "Leading 21 engineers across 3 pods, influencing 33 engineers in payments org",
-      "Owning systems processing 15K TPS and ₹600-900 Cr daily card volume",
-      "Reduced transaction latency from 10 seconds to 2 seconds post re-architecture",
-      "Delivered Cred Pay and Apple Pay integrations as primary OKRs",
-      "Achieved 99.9% effective uptime for card payment flows",
-      "Reduced logging costs from 9p to 3p per transaction",
+      "Led 21 engineers across three pods and influenced roughly 33 more across routing, terminal and cross-border payment domains.",
+      "Drove the re-architecture of a legacy PHP API monolith into Go services for card and recurring payments, against the internal security, compliance, reliability, efficiency and delivery bar.",
+      "Closed a visibility gap where merchant-impacting failures surfaced 20 minutes late: a Kafka, Spark Streaming and Apache Pinot pipeline brought detection under one second for 40+ high-value merchants.",
+      "Shipped Cred Pay and Apple Pay as the year's primary OKRs, and cut logging cost per transaction from ₹0.09 to ₹0.03.",
     ],
   },
   {
     title: "Director, Software Engineering",
-    subtitle: "India Engineering Pods",
-    company: "Guidepoint Global",
-    location: "New York (Remote Pune)",
-    period: "Jun 2023 – Feb 2025",
+    company: "Guidepoint",
+    location: "Pune, India",
+    period: "Jun 2023 — Feb 2025",
+    summary:
+      "Ran the India engineering organisation for CRM modernisation, advisor discovery, client portals and AI-assisted products, partnering directly with product leadership in New York.",
     highlights: [
-      "Led CRM modernization, advisor platforms, and client-facing portals",
-      "Delivered PHP 8 migration of entire ecosystem in 2 months for SOC2 compliance",
-      "Decomposed monolithic systems into microservices with Databricks ETL",
-      "Designed federated micro-frontend architecture for AI Co-pilot platform",
+      "Delivered a full PHP 8 migration of the ecosystem in two months, unblocking SOC 2 compliance and continuity for enterprise clients.",
+      "Decomposed monolithic systems into services and wired Databricks ETL into the advisor discovery platform.",
+      "Designed a federated micro-frontend architecture unifying Advisor Search, Insights 2.0 and the AI co-pilot, with LLM-backed advisor matching.",
+      "Owned the org design and stakeholder plan with the CTO that turned the Pune office into a Global Capability Center.",
     ],
   },
   {
-    title: "Engineering Manager",
-    subtitle: "Cloud Data & ACN Upgrades",
+    title: "Manager, Engineering",
     company: "Acquia",
-    location: "Boston (Remote India)",
-    period: "Feb 2021 – Jun 2023",
+    location: "Pune, India — Remote",
+    period: "Feb 2021 — Jun 2023",
+    summary:
+      "Built and led the Cloud Next upgrades and data platform teams across IST and Boston hours, spanning junior through principal engineers.",
     highlights: [
-      "Built high-performing team from freshers to senior SDEs and SDETs",
-      "Delivered $660K annual COGS savings through cloud migration",
-      "Championed Kubernetes, Terraform, CI/CD automation across platforms",
-      "Accelerated enterprise customer onboarding and adoption",
+      "Delivered $660K in annual COGS savings by migrating customers from Cloud Classic to Cloud Next on a multi-tenant Aurora MySQL model.",
+      "Owned the Acquia Cloud Next roadmap features that shortened enterprise onboarding.",
+      "Pushed Kubernetes, Terraform, CI/CD automation and SRE practice across the cloud and digital asset management platforms.",
     ],
   },
   {
-    title: "Tech Lead & Engineering Manager",
-    subtitle: "Travel & Financial Services",
+    title: "Technical Lead to Engineering Manager",
     company: "MobiKwik",
-    location: "Gurgaon",
-    period: "Nov 2016 – Feb 2021",
+    location: "Gurugram, India",
+    period: "Nov 2016 — Feb 2021",
+    summary:
+      "Took insurance, lending and travel lines from nothing to production — MVP scope, partner integrations, architecture and delivery.",
     highlights: [
-      "Architected Hotels, Bus Tickets, Cabs, Bike Rentals, Insurance products",
-      "Built teams from 0 to 12 engineers; hired 40+ engineers since 2016",
-      "Led transformation to wallet-as-payment-gateway (RBI PPI compliance)",
-      "Improved GMV from ₹181 Cr/month to ₹210 Cr/month via Bug-a-thon",
-      "Achieved API latency under 200ms for recharge payments",
+      "Built the insurance cross-sell framework (Stargate) that allowed multiple service bundles in a single transaction.",
+      "Led the shift from wallet-only to wallet-as-payment-gateway in line with RBI PPI regulation.",
+      "Held 99.90% availability on recharge and bill payments with circuit-breaker isolation, and sub-200ms API latency across Euronet, BillDesk and BillAvenue.",
+      "Grew teams from zero to twelve engineers, and lifted recharge GMV from ₹181 Cr to ₹210 Cr a month through a targeted tech-debt programme.",
     ],
   },
   {
     title: "Staff Software Engineer",
-    subtitle: "Technical Lead Manager — Catalogue",
     company: "ShopClues",
-    location: "Gurgaon",
-    period: "Sep 2015 – Nov 2016",
+    location: "Gurugram, India",
+    period: "Sep 2015 — Nov 2016",
+    summary:
+      "Led six engineers across catalogue ingestion, moderation and inventory.",
     highlights: [
-      "Led 6 engineers owning catalogue, moderation, and inventory systems",
-      "Increased bulk ingestion from 30K to 100K products/day",
-      "Reduced banned-product enforcement SLA from 5 days to 24 hours",
+      "Raised bulk ingestion from 30K to 100K products a day and cut banned-product enforcement from five days to under 24 hours.",
     ],
   },
   {
-    title: "Senior → Lead Engineer",
-    subtitle: "Platform Engineering",
-    company: "InfoEdge (Naukri.com)",
-    location: "Noida",
-    period: "Nov 2011 – May 2015",
+    title: "Senior Software Engineer to Lead Engineer",
+    company: "InfoEdge — Naukri.com",
+    location: "Noida, India",
+    period: "Nov 2011 — May 2015",
+    summary:
+      "Built the Background Check and Priority Applicant platforms, and migrated legacy systems from Symfony 1.x to 2.x.",
     highlights: [
-      "Built Naukri Background Check and Priority Applicant platforms",
-      "Migrated from Symfony 1.x to 2.x across the platform",
-      "Optimized email/SMS pipelines: SLA improved 3PM → 11AM for 1M+ users",
-      "Introduced Git and Agile practices across engineering teams",
+      "Moved the CRM email and SMS pipeline SLA from 3 PM to 11 AM for over a million active users, and introduced Git, Docker and agile practice across the teams.",
     ],
   },
   {
     title: "Software Engineer",
-    subtitle: "PreTUPS™ Platform",
     company: "Comviva Technologies",
-    location: "Gurgaon",
-    period: "Dec 2009 – Mar 2011",
-    highlights: [
-      "Sole developer for prepaid top-up system across 50+ global telecom clients",
-      "SPOC for Vodafone East, West, and North regions",
-    ],
+    location: "Gurugram, India",
+    period: "Dec 2009 — Mar 2011",
+    summary:
+      "Module developer on PreTUPS, a prepaid top-up platform deployed across 50+ telecom operators, and the on-site point of contact for Vodafone East, West and North migrations.",
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 md:py-20 bg-[#161b22]/50">
-      <div className="w-full px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-10 md:mb-12">
-            <p className="text-[#58a6ff] font-mono text-sm md:text-base mb-3 tracking-wider">02. Experience</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f0f6fc]">
-              Where I&apos;ve Worked
-            </h2>
-          </div>
+    <section id="experience" className="border-b border-rule py-16 sm:py-24">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
+        <p className="eyebrow">Experience</p>
+        <h2 className="mt-6 text-3xl sm:text-4xl">Sixteen years, seven companies</h2>
+        <p className="mt-5 max-w-2xl text-ink-muted">
+          Telecom to marketplaces to payments to enterprise SaaS. The scope changed; the habit of
+          owning the whole system rather than a slice of it didn&apos;t.
+        </p>
 
-          {/* Timeline - Alternating Layout */}
-          <div className="relative">
-            {/* Timeline Line - Center on desktop, left on mobile */}
-            <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#58a6ff] via-[#a371f7] to-[#3fb950]" />
+        <ol className="mt-12 border-t border-rule">
+          {roles.map((role) => (
+            <li
+              key={`${role.company}-${role.period}`}
+              className="grid gap-3 border-b border-rule py-8 md:grid-cols-[190px_1fr] md:gap-10"
+            >
+              <div className="md:pt-1">
+                <p className="font-mono text-xs tracking-wide text-ink">{role.period}</p>
+                <p className="mt-1 text-sm text-ink-subtle">{role.location}</p>
+                {role.current && (
+                  <p className="mt-2 inline-block bg-accent-soft px-2 py-0.5 font-mono text-[0.65rem] uppercase tracking-[0.15em] text-accent">
+                    Current
+                  </p>
+                )}
+              </div>
 
-            {experiences.map((exp, index) => {
-              const isLeft = index % 2 === 0;
+              <div>
+                <h3 className="text-2xl">{role.title}</h3>
+                <p className="mt-1 text-accent">{role.company}</p>
+                <p className="mt-3 text-ink-muted">{role.summary}</p>
 
-              return (
-                <div key={index} className="relative mb-8 md:mb-10">
-                  {/* Timeline Dot */}
-                  <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-[#58a6ff] border-4 border-[#0d1117] -translate-x-1/2 z-10 top-8" />
+                {role.highlights && (
+                  <ul className="mt-4 space-y-2.5">
+                    {role.highlights.map((highlight) => (
+                      <li
+                        key={highlight}
+                        className="relative pl-5 text-[0.95rem] text-ink-muted before:absolute before:left-0 before:top-[0.72em] before:h-px before:w-3 before:bg-rule-strong"
+                      >
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
 
-                  {/* Desktop: Alternating layout */}
-                  <div className="hidden md:grid md:grid-cols-2 md:gap-12">
-                    {/* Left side */}
-                    <div className={isLeft ? "pr-8" : ""}>
-                      {isLeft && (
-                        <ExperienceCard exp={exp} align="right" />
-                      )}
-                    </div>
-
-                    {/* Right side */}
-                    <div className={!isLeft ? "pl-8" : ""}>
-                      {!isLeft && (
-                        <ExperienceCard exp={exp} align="left" />
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Mobile: Single column */}
-                  <div className="md:hidden ml-14">
-                    <ExperienceCard exp={exp} align="left" />
-                  </div>
-                </div>
-              );
-            })}
+        <div className="mt-10 grid gap-2 sm:grid-cols-[190px_1fr] sm:gap-10">
+          <p className="eyebrow sm:pt-1">Education</p>
+          <div>
+            <p className="text-ink">B.Tech, Computer Engineering — Jamia Millia Islamia, New Delhi</p>
+            <p className="mt-1 text-sm text-ink-subtle">2005 — 2009 · First Division</p>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function ExperienceCard({ exp, align }: { exp: typeof experiences[0]; align: "left" | "right" }) {
-  return (
-    <div
-      className={`bg-[#21262d] border border-[#30363d] rounded-xl p-6 md:p-8 card-hover ${
-        exp.type === "current" ? "border-[#58a6ff] shadow-lg shadow-[#58a6ff]/10" : ""
-      } ${align === "right" ? "text-right" : "text-left"}`}
-    >
-      {exp.type === "current" && (
-        <span className={`inline-flex items-center gap-2 px-3 py-1.5 bg-[#58a6ff]/20 text-[#58a6ff] text-xs font-semibold rounded-full mb-4 ${align === "right" ? "flex-row-reverse" : ""}`}>
-          <span className="w-2 h-2 bg-[#58a6ff] rounded-full animate-pulse" />
-          Current Role
-        </span>
-      )}
-
-      <h3 className="text-xl md:text-2xl font-bold text-[#f0f6fc] mb-2">
-        {exp.title}
-      </h3>
-      <p className="text-[#a371f7] text-sm md:text-base font-medium mb-3">{exp.subtitle}</p>
-
-      <div className={`flex flex-wrap items-center gap-2 text-sm text-[#8b949e] mb-5 ${align === "right" ? "justify-end" : "justify-start"}`}>
-        <span className="font-semibold text-[#58a6ff]">{exp.company}</span>
-        <span>•</span>
-        <span>{exp.location}</span>
-        <span>•</span>
-        <span>{exp.period}</span>
-      </div>
-
-      <ul className="space-y-3">
-        {exp.highlights.map((highlight, hIndex) => (
-          <li key={hIndex} className={`flex items-start gap-3 text-[#8b949e] text-sm md:text-base ${align === "right" ? "flex-row-reverse text-right" : ""}`}>
-            <span className="text-[#3fb950] mt-1.5 flex-shrink-0">▹</span>
-            <span className="leading-relaxed">{highlight}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
