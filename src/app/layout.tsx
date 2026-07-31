@@ -1,9 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const title = "Bharat Verma — Engineering Leader, Platform & Payments";
 const description =
   "Engineering leader with 16+ years building platform and payment organisations. Director of Platform Engineering at AssetMark; previously Razorpay, Guidepoint, Acquia and MobiKwik.";
+
+export const viewport: Viewport = {
+  themeColor: "#0f1211",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bindian0509.github.io"),

@@ -107,6 +107,13 @@ export default function Skills() {
             </div>
           ))}
         </dl>
+
+        <div className="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-1 border border-rule-strong bg-accent-soft px-5 py-4">
+          <p className="eyebrow">Currently exploring</p>
+          <p className="text-[0.95rem] text-ink-muted">
+            RAG pipelines, LLM agents, the Model Context Protocol, and n8n for workflow automation.
+          </p>
+        </div>
       </div>
     </section>
   );

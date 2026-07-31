@@ -105,6 +105,20 @@ const roles: Role[] = [
   },
 ];
 
+// `span` is tenure in years; it drives the proportional width of each timeline segment.
+const timeline = [
+  { company: "Comviva", period: "2009 — 2011", span: 1.25 },
+  { company: "InfoEdge", period: "2011 — 2015", span: 3.5 },
+  { company: "ShopClues", period: "2015 — 2016", span: 1.2 },
+  { company: "MobiKwik", period: "2016 — 2021", span: 4.25 },
+  { company: "Acquia", period: "2021 — 2023", span: 2.35 },
+  { company: "Guidepoint", period: "2023 — 2025", span: 1.65 },
+  { company: "Razorpay", period: "2025 — 2026", span: 1.1 },
+  { company: "AssetMark", period: "2026 —", span: 0.6, current: true },
+];
+
+const timelineColumns = timeline.map((era) => `minmax(88px, ${era.span}fr)`).join(" ");
+
 export default function Experience() {
   return (
     <section id="experience" className="border-b border-rule py-16 sm:py-24">
@@ -115,6 +129,33 @@ export default function Experience() {
           Telecom to marketplaces to payments to enterprise SaaS. The scope changed; the habit of
           owning the whole system rather than a slice of it didn&apos;t.
         </p>
+
+        <div className="mt-12 hidden md:block">
+          <div
+            className="grid gap-px border border-rule bg-rule"
+            style={{ gridTemplateColumns: timelineColumns }}
+          >
+            {timeline.map((era, index) => (
+              <div key={era.company} className="bg-paper px-3 pt-3 pb-4">
+                <div
+                  className="h-1 bg-accent"
+                  style={{ opacity: 0.22 + (index / (timeline.length - 1)) * 0.78 }}
+                />
+                <p
+                  className={`mt-3 font-serif text-[0.95rem] leading-tight ${
+                    era.current ? "text-accent" : "text-ink"
+                  }`}
+                >
+                  {era.company}
+                </p>
+                <p className="mt-1 font-mono text-[0.65rem] text-ink-subtle">{era.period}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.15em] text-ink-subtle">
+            Segment width is proportional to time in role
+          </p>
+        </div>
 
         <ol className="mt-12 border-t border-rule">
           {roles.map((role) => (

@@ -34,12 +34,12 @@ export default function Navbar() {
           Bharat Verma
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="link-rule text-sm text-ink-muted hover:text-ink"
+              className="border border-transparent px-3 py-1.5 text-sm text-ink-muted transition-colors duration-200 hover:border-accent hover:bg-accent hover:text-paper"
             >
               {item.name}
             </a>
@@ -48,7 +48,7 @@ export default function Navbar() {
             href="https://linkedin.com/in/bharatverma"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-accent link-underlined"
+            className="ml-3 border border-accent bg-accent px-3 py-1.5 text-sm text-paper transition-opacity duration-200 hover:opacity-85"
           >
             LinkedIn
           </a>

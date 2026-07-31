@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 const socialLinks = [
   {
     name: "LinkedIn",
@@ -8,6 +10,7 @@ const socialLinks = [
     ),
     href: "https://linkedin.com/in/bharatverma",
     label: "in/bharatverma",
+    brand: "#4a9ede",
   },
   {
     name: "Twitter",
@@ -18,6 +21,7 @@ const socialLinks = [
     ),
     href: "https://twitter.com/iambharatv",
     label: "@iambharatv",
+    brand: "#55acee",
   },
   {
     name: "GitHub",
@@ -28,6 +32,7 @@ const socialLinks = [
     ),
     href: "https://github.com/bindian0509",
     label: "bindian0509",
+    brand: "#e6edf3",
   },
   {
     name: "Medium",
@@ -38,6 +43,7 @@ const socialLinks = [
     ),
     href: "https://bharatv90s.medium.com",
     label: "bharatv90s",
+    brand: "#2ebd85",
   },
   {
     name: "Dev.to",
@@ -48,6 +54,29 @@ const socialLinks = [
     ),
     href: "https://dev.to/bindian0509",
     label: "bindian0509",
+    brand: "#c9d1d9",
+  },
+  {
+    name: "Hashnode",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M22.351 8.019l-6.37-6.37a5.63 5.63 0 00-7.962 0l-6.37 6.37a5.63 5.63 0 000 7.962l6.37 6.37a5.63 5.63 0 007.962 0l6.37-6.37a5.63 5.63 0 000-7.962zM12 15.953a3.953 3.953 0 110-7.906 3.953 3.953 0 010 7.906z" />
+      </svg>
+    ),
+    href: "https://bharatv.hashnode.dev",
+    label: "bharatv.hashnode.dev",
+    brand: "#5b8cff",
+  },
+  {
+    name: "Stack Overflow",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.155z" />
+      </svg>
+    ),
+    href: "https://stackoverflow.com/users/723817/bharat",
+    label: "users/723817/bharat",
+    brand: "#f48024",
   },
 ];
 
@@ -120,7 +149,8 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={link.label}
-                      className="flex items-center gap-1.5 text-ink-muted transition-colors hover:text-accent [&_svg]:h-4 [&_svg]:w-4"
+                      style={{ "--brand": link.brand } as CSSProperties}
+                      className="flex items-center gap-1.5 text-ink-muted transition-colors hover:text-ink [&_svg]:h-4 [&_svg]:w-4 [&_svg]:text-[var(--brand)] [&_svg]:opacity-75 [&_svg]:transition-opacity hover:[&_svg]:opacity-100"
                     >
                       {link.icon}
                       <span>{link.name}</span>
